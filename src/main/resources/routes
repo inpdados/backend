@@ -1,0 +1,6 @@
+GET /i/ping xingu.commons.play.controllers.InternalController.ping()
+GET /i/conf xingu.commons.play.controllers.InternalController.conf()
+GET /i/stat xingu.commons.play.controllers.InternalController.stat()
+
+GET  /comments controllers.CommentsController.all()
+POST /comment  controllers.CommentsController.append()
