@@ -1,5 +1,5 @@
 CREATE TABLE comments (
-    id       SERIAL               ,
+    id       SERIAL                ,
     at       TIMESTAMP    NOT NULL ,
     target   VARCHAR(64)  NOT NULL ,
     comment  TEXT         NOT NULL ,
@@ -7,5 +7,12 @@ CREATE TABLE comments (
     dislikes INTEGER     DEFAULT 0 ,
     name     VARCHAR(64)           ,
     email    VARCHAR(128)          ,
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE associates (
+    id       SERIAL                ,
+    created  TIMESTAMP    NOT NULL ,
+    kind     VARCHAR(32)  NOT NULL ,
     PRIMARY KEY(id)
 );

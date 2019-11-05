@@ -8,9 +8,10 @@ import play.api.mvc.InjectedController
 import xingu.commons.play.controllers.XinguController
 import xingu.commons.play.services.Services
 
-class CommentsController @Inject()(
+class CommentsController @Inject() (
   services : Services,
-  comments :  Comments) extends InjectedController with XinguController {
+  comments :  Comments) extends InjectedController with XinguController
+{
 
   implicit val ec = services.ec()
 

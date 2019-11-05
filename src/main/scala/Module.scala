@@ -1,9 +1,10 @@
 import java.time.Clock
 
 import com.google.inject.AbstractModule
-import domain.comments.{Comments, DatabaseComments}
+import domain.associates._
+import domain.comments._
 import play.api.{Configuration, Environment}
-import xingu.commons.play.services.{BasicServices, Services}
+import xingu.commons.play.services._
 
 class Module (env: Environment, conf: Configuration) extends AbstractModule {
   override def configure() = {
@@ -17,8 +18,9 @@ class Module (env: Environment, conf: Configuration) extends AbstractModule {
       )
     )
 
-    bind(classOf[Clock])    .toInstance(Clock.systemDefaultZone)
-    bind(classOf[Services]) .to(classOf[BasicServices]).asEagerSingleton()
-    bind(classOf[Comments]) .to(classOf[DatabaseComments])
+    bind(classOf[Clock])      .toInstance(Clock.systemDefaultZone)
+    bind(classOf[Services])   .to(classOf[BasicServices]).asEagerSingleton()
+    bind(classOf[Comments])   .to(classOf[DatabaseComments])
+    bind(classOf[Associates]) .to(classOf[DatabaseAssociates])
   }
 }

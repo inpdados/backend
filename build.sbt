@@ -1,7 +1,7 @@
 import sbt.Keys._
 
 scalaVersion := "2.12.4"
-name         := "skeleton"
+name         := "inpd-backend"
 version      := "v1.0-SNAPSHOT"
 
 PlayKeys.devSettings := Seq(
